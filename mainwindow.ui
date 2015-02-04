@@ -14,11 +14,47 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QComboBox" name="serialPortComboBox">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>0</y>
+      <x>10</x>
+      <y>20</y>
+      <width>85</width>
+      <height>27</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_sendData">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>110</y>
+      <width>99</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Send Data</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Disconnect">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>20</y>
+      <width>99</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Disconnect</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Connect">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>20</y>
       <width>99</width>
       <height>27</height>
      </rect>
@@ -27,27 +63,17 @@
      <string>Connect</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="serialPortComboBox">
+   <widget class="QLabel" name="label_linkStatus">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>0</x>
       <y>0</y>
-      <width>85</width>
-      <height>27</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="statusLabel">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>0</y>
-      <width>111</width>
-      <height>91</height>
+      <width>141</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string>Connection Status</string>
     </property>
    </widget>
   </widget>
