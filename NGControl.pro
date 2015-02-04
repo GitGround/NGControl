@@ -15,9 +15,14 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    masterthread.cpp
+    MavLinkProtocol.cpp \
+    SerialLink.cpp
 
 HEADERS  += mainwindow.h \
-    masterthread.h
+    MavLinkProtocol.h \
+    SerialLink.h
 
 FORMS    += mainwindow.ui
+
+#to use mavlink in the project; as external library
+INCLUDEPATH += libs/mavlink/include/mavlink/v1.0/common
