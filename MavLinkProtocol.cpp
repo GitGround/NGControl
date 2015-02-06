@@ -1,4 +1,5 @@
 #include "MavLinkProtocol.h"
+#include <Driver/SerialPortLink.h>
 #include <QDebug>
 
 MAVLinkProtocol::MAVLinkProtocol() {
@@ -24,8 +25,16 @@ void MAVLinkProtocol::sendMessage(mavlink_message_t message) {
     // Write message into buffer, prepending start sign
     int len = mavlink_msg_to_send_buffer(buffer, &message);
 
-    //send data and data length to be written at serial port
-    serialLink.sendData(serialPortName, (const char*) buffer, len);
+
+    serialPortLink.setCurrentPortName(serialPortName);
+    serialPortLink.writeBytes((const char*) buffer, len);  //send data and data length to be written at serial port
+
+    /*
+    [#Example]: for declearing new object, just for further REF
+
+    SerialPortLink* serialLink = new SerialPortLink(serialPortName);
+
+    */
 
 }
 
@@ -38,6 +47,6 @@ void MAVLinkProtocol::sendHeartbeat() {
 }
 
 bool MAVLinkProtocol::isConnected(){
-    return serialLink.isConnected();
+return serialPortLink.isConnected();
 }
 

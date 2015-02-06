@@ -4,8 +4,8 @@
 #include <QMainWindow>
 #include <QtSerialPort/QSerialPortInfo> //need it for adding availabe serial ports
 #include <QtSerialPort/QSerialPort>
-#include <SerialLink.h>
 #include <MavLinkProtocol.h>
+#include <Driver/SerialPortLink.h>
 
 namespace Ui {
 class MainWindow;
@@ -37,7 +37,6 @@ private:
     //http://gribblelab.org/CBootcamp/7_Memory_Stack_vs_Heap.html
 
     Ui::MainWindow *ui;
-    SerialLink thread; //for MasterThread class
     QSerialPort *serial; //need it to set serial port setting
     MAVLinkProtocol mavlink; //for protocol level
     QString currentPortName;
