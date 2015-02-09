@@ -14,6 +14,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->pushButton_sendData->setEnabled(false);
     //Example: only checkable button emit (bool checked) // ui->pushButton->setCheckable(true);
 
+
+    SerialPortLink test();
+    //spl = new SerialPortLink();
+
 }
 
 MainWindow::~MainWindow() {
@@ -24,7 +28,7 @@ MainWindow::~MainWindow() {
 void MainWindow::on_pushButton_sendData_clicked() {
     //send heart beat to check the connection [To Do: still strange to me]
      mavlink.sendHeartbeat();
-
+//[#To Do: currently not working]
     if (mavlink.isConnected()){
         ui->label_linkStatus->setText("Connected");
     }

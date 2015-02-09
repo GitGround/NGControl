@@ -16,11 +16,11 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     MavLinkProtocol.cpp \
-    SerialLink.cpp
+    Driver/SerialPortLink.cpp
 
 HEADERS  += mainwindow.h \
     MavLinkProtocol.h \
-    SerialLink.h
+    Driver/SerialPortLink.h
 
 FORMS    += mainwindow.ui
 

@@ -2,7 +2,7 @@
 #define MAVLINKPROTOCOL_H
 
 #include <mavlink.h>
-#include <SerialLink.h>  //for serial port and thread communication class
+#include <Driver/SerialPortLink.h>
 class MAVLinkProtocol
 {
 public:
@@ -20,7 +20,8 @@ private:
      static const int systemId = 255;
      static const int componentId = 0;
      static const int linkId = 1;
-     SerialLink serialLink; //for serial port and thread communication class
+
+      SerialPortLink serialPortLink;
 
 };
 
